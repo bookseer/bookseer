@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<title>{% block title %}Welcome{% endblock %} — bookseer</title>
+<body>
+  {% set pages = site.query('/index').include_undiscoverable(true).all() %}
+  <header>
+    <h1>{{ this.title }}</h1>
+    <nav>
+      <ul>
+      <li{% if this._path == '/' %} class="active"{% endif
+          %}><a href="{{ '/'|url }}">Главная</a></li>
+        {% for page in pages %}
+        <li><a href="#{{ page._id }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+    Copyright &copy; 2023, Александр Красников.
+    Все права защищены.
+    <br/>
+    Powered by <a href=https://www.getlektor.com/ _target="blank" rel="noindex">Lektor</a>
+  </footer>
+</body>
