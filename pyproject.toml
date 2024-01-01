@@ -86,8 +86,7 @@ stop = "deactivate; exit"
 
 # Build and publish book
 publish = """
-jupyter-book build --all --builder html book/
-ghp-import --no-jekyll --push --force --cname=algorithms.bookseer.org book/_build/html
+lektor build  --output-path ./docs
 """
 
 

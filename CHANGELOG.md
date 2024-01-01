@@ -19,6 +19,9 @@
 
 ## [0.1.1] - 2024.01.01
 
+### Добавлено
+- Команда сборки в pyproject.toml
+
 ### Изменено
 
 - Произведена смена лицензии на [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode.en)
