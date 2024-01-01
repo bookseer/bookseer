@@ -479,3 +479,8 @@ wheels/
 # Lektor
 docs/.lektor/
 
+# Jet Brains
+.idea/
+
+# Jupyter Book
+book/_build/

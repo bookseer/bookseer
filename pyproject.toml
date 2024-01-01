@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "bookseer"
-version = "0.1.0"
+version = "0.1.1"
 description = "Каталог учебных материалов"
 authors = ["Alexander Krasnikov <askrasnikov@gmail.com>"]
 maintainers = ["askras <askrasnikov@gmail.com>"]
@@ -83,6 +83,12 @@ notebook = "python -m jupyter notebook --allow-root --NotebookApp.token='' --Not
 
 # Deactivate virtual environment.
 stop = "deactivate; exit"
+
+# Build and publish book
+publish = """
+jupyter-book build --all --builder html book/
+ghp-import --no-jekyll --push --force --cname=algorithms.bookseer.org book/_build/html
+"""
 
 
 #======================================================================================================================
